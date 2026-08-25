@@ -25,6 +25,18 @@ CATEGORIES = (
 
 ItemMap = dict[str, list[dict[str, Any]]]
 
+# Finish / fixture / equipment tags that can be slash-grouped on drawings (CPT-2/3).
+TAG_CHUNK_RE = re.compile(
+    r"\b((?:CPT|P|WB|CONC|ESD|MWP|ACT|TWB|T|SS|PL|FRP|WP|CG|GLF|RSH|WD|UPH|WV|"
+    r"DF|WC|L|U|MS|DWH|EWH|GD|KS|FCU)-\d+[A-Za-z]?(?:/\d+[A-Za-z]?)*)\b",
+    re.IGNORECASE,
+)
+ROOM_KEY_RE = re.compile(r"^[NSEW]?\d+[A-Z]?$", re.IGNORECASE)
+MEP_KEY_RE = re.compile(
+    r"^(?:WC|L|U|DF|MS|DWH|EWH|GD|KS|FCU|FD)-\d+[A-Z]?$",
+    re.IGNORECASE,
+)
+
 
 def list_pdfs(dataset_dir: str) -> list[str]:
     names = []
@@ -99,6 +111,32 @@ def parse_json_object(text: str) -> dict[str, Any]:
 
 def normalize_key(key: str) -> str:
     return re.sub(r"\s+", " ", (key or "").strip())
+
+
+def expand_tag_token(token: str) -> list[str]:
+    """CPT-2/3 → [CPT-2, CPT-3]; P-1/4 → [P-1, P-4]."""
+    token = token.strip()
+    m = re.match(
+        r"^([A-Za-z]+)-(\d+[A-Za-z]?)((?:/\d+[A-Za-z]?)*)$",
+        token,
+    )
+    if not m:
+        return [normalize_key(token)]
+    prefix, first, rest = m.group(1).upper(), m.group(2), m.group(3)
+    # Preserve letter suffixes case as in source for digits-only first part
+    nums = [first] + [p for p in rest.split("/") if p]
+    return [normalize_key(f"{prefix}-{n}") for n in nums]
+
+
+def tags_in_text(text: str) -> list[str]:
+    found: list[str] = []
+    seen: set[str] = set()
+    for match in TAG_CHUNK_RE.finditer(text or ""):
+        for tag in expand_tag_token(match.group(1)):
+            if tag not in seen:
+                seen.add(tag)
+                found.append(tag)
+    return found
 
 
 def summarize_map(item_map: ItemMap, *, max_keys: int = 120) -> dict[str, str]:
@@ -192,7 +230,10 @@ Respond with ONLY JSON:
 
 Rules:
 - Emit a claim for each distinct tag/mark/room with useful info on this page.
-- For rooms: include finish codes shown (floor/base/wall).
+- For rooms: include finish codes shown (floor/base/wall), e.g. "Room N106 floor CPT-2/3 base WB-2 wall P-1".
+- ALWAYS emit fixture/MEP marks when present on the sheet (WC-1, WC-2, L-1, L-2, U-1,
+  DF-1, DF-2, MS-1, DWH-1, EWH-1, GD-1, KS-1, FCU-1, FD-1) — reuse schedule keys exactly.
+- Also emit each finish tag (CPT-*, P-*, WB-*, CONC-*, MWP-*) when the legend or plan uses it.
 - For notes with slopes, ratings, sizes, voltages — attach to the relevant key.
 - Prefer many specific items over omitting content.
 """
@@ -266,8 +307,87 @@ def add_claims(item_map: ItemMap, document: str, claims: list[dict[str, Any]]) -
     return n
 
 
+def expand_room_finish_links(item_map: ItemMap) -> int:
+    """Propagate finish tags from room/drawing claims onto CPT-*/P-*/… keys."""
+    added = 0
+    snapshot = {k: list(v) for k, v in item_map.items()}
+    for key, claims in snapshot.items():
+        for claim in claims:
+            if not is_drawing_pdf(claim["document"]):
+                continue
+            tags = tags_in_text(claim["text"])
+            for tag in tags:
+                if tag.upper() == key.upper():
+                    continue
+                if ROOM_KEY_RE.match(key):
+                    text = f"Room {key} uses {tag}: {claim['text']}"
+                else:
+                    text = f"Drawing co-occurrence with {key}: {claim['text']}"
+                existing = item_map.get(tag, [])
+                if any(
+                    e["document"] == claim["document"]
+                    and e["page"] == claim["page"]
+                    and e["text"] == text
+                    for e in existing
+                ):
+                    continue
+                item_map.setdefault(tag, []).append(
+                    {
+                        "document": claim["document"],
+                        "page": claim["page"],
+                        "text": text,
+                    }
+                )
+                added += 1
+    print(f"Room→finish link expansion: +{added} claim(s)")
+    return added
+
+
+def link_schedule_marks_on_drawings(
+    item_map: ItemMap, drawing_pages: dict[str, list[str]]
+) -> int:
+    """If a schedule mark appears in drawing PDF text, attach a drawing claim (MEP orphans)."""
+    schedule_keys = {
+        k
+        for k, claims in item_map.items()
+        if any(is_schedule_pdf(c["document"]) for c in claims)
+    }
+    # Prefer MEP-like keys, but also any short schedule tag
+    priority = [k for k in schedule_keys if MEP_KEY_RE.match(k)]
+    others = [k for k in schedule_keys if k not in priority]
+    watch = priority + others
+
+    added = 0
+    for doc, pages in drawing_pages.items():
+        for page_num, page_text in enumerate(pages, start=1):
+            # Normalize text for matching: collapse whitespace
+            hay = page_text.upper()
+            for key in watch:
+                # Word-ish match for mark (WC-1, L-1, MSB-NORTH handled separately)
+                pattern = re.compile(
+                    r"(?<![A-Z0-9])" + re.escape(key.upper()) + r"(?![A-Z0-9])"
+                )
+                if not pattern.search(hay):
+                    continue
+                text = f"Mark {key} appears on drawing sheet page {page_num}."
+                existing = item_map.get(key, [])
+                if any(
+                    e["document"] == doc and e["page"] == page_num and key in e["text"]
+                    for e in existing
+                    if e["document"] == doc
+                ):
+                    continue
+                item_map.setdefault(key, []).append(
+                    {"document": doc, "page": page_num, "text": text}
+                )
+                added += 1
+    print(f"Drawing mark linking: +{added} claim(s) for schedule tags found in drawings")
+    return added
+
+
 def build_item_map(dataset_dir: str) -> ItemMap:
     item_map: ItemMap = {}
+    drawing_pages: dict[str, list[str]] = {}
     pdfs = list_pdfs(dataset_dir)
     if not pdfs:
         print(f"No PDFs found in {dataset_dir}")
@@ -308,6 +428,8 @@ def build_item_map(dataset_dir: str) -> ItemMap:
             continue
 
         kind = "drawing" if is_drawing_pdf(name) else "doc"
+        if is_drawing_pdf(name):
+            drawing_pages[name] = pages
         print(f"Labeling {name} as {kind} ({len(pages)} page(s) via pypdf)…")
         for idx, page_text in enumerate(pages, start=1):
             try:
@@ -318,6 +440,14 @@ def build_item_map(dataset_dir: str) -> ItemMap:
                         page_text=page_text,
                         existing_summary=summarize_map(item_map),
                     )
+                    # Deterministic: also emit tags/MEP marks regex-found on this page
+                    for tag in tags_in_text(page_text):
+                        labeled.append(
+                            {
+                                "key": tag,
+                                "text": f"Tag {tag} present in drawing page text.",
+                            }
+                        )
                 else:
                     labeled = label_generic_page(
                         document=name,
@@ -328,12 +458,23 @@ def build_item_map(dataset_dir: str) -> ItemMap:
             except Exception as exc:  # noqa: BLE001
                 print(f"  label failed {name} p{idx}: {exc}")
                 continue
-            print(f"  page {idx}: {len(labeled)} claim(s)")
+            # de-dupe labeled
+            seen: set[tuple[str, str]] = set()
+            uniq = []
+            for c in labeled:
+                sig = (c["key"], c["text"])
+                if sig not in seen:
+                    seen.add(sig)
+                    uniq.append(c)
+            print(f"  page {idx}: {len(uniq)} claim(s)")
             add_claims(
                 item_map,
                 name,
-                [{"key": c["key"], "text": c["text"], "page": idx} for c in labeled],
+                [{"key": c["key"], "text": c["text"], "page": idx} for c in uniq],
             )
+
+    expand_room_finish_links(item_map)
+    link_schedule_marks_on_drawings(item_map, drawing_pages)
     return item_map
 
 
@@ -343,6 +484,30 @@ def multi_document_keys(item_map: ItemMap) -> list[str]:
         for key, claims in item_map.items()
         if len({c["document"] for c in claims}) >= 2
     )
+
+
+def intra_document_conflict_keys(item_map: ItemMap) -> list[str]:
+    """Keys with ≥2 distinct claim texts inside the same document (e.g. duplicate Tag rows)."""
+    keys: list[str] = []
+    for key, claims in item_map.items():
+        if ROOM_KEY_RE.match(key):
+            continue  # room paraphrases are not schedule conflicts
+        by_doc: dict[str, set[str]] = {}
+        for c in claims:
+            # Focus intra-doc checks on schedule rows (duplicate Tags) and
+            # product-like tags, not every drawing note pair.
+            if not is_schedule_pdf(c["document"]) and not re.match(
+                r"^[A-Za-z]{1,5}-\d+", key
+            ):
+                continue
+            by_doc.setdefault(c["document"], set()).add(c["text"].strip().lower())
+        if any(len(texts) >= 2 for texts in by_doc.values()):
+            keys.append(key)
+    return sorted(keys)
+
+
+def conflict_candidate_keys(item_map: ItemMap) -> list[str]:
+    return sorted(set(multi_document_keys(item_map)) | set(intra_document_conflict_keys(item_map)))
 
 
 def classify_category(description: str, suggested: str) -> str:
@@ -364,7 +529,13 @@ def classify_category(description: str, suggested: str) -> str:
 
 def resolve_conflict(key: str, claims: list[dict[str, Any]]) -> dict[str, Any] | None:
     claims_blob = json.dumps(claims, ensure_ascii=False, indent=2)
-    prompt = f"""You compare claims about the same construction item from different documents.
+    docs = {c["document"] for c in claims}
+    scope = (
+        "across different documents"
+        if len(docs) >= 2
+        else "within the SAME document (duplicate/contradictory rows or notes)"
+    )
+    prompt = f"""You compare claims about the same construction item {scope}.
 
 Item key: {key}
 Claims:
@@ -372,10 +543,15 @@ Claims:
 
 A CONFLICT means contradictory measurable facts (e.g. 45 min vs 90 min fire rating,
 5.0 gpm vs 0.5 gpm, different manufacturers for the same exclusive tag, conflicting
-colors/models). NOT a conflict: synonyms, restating the same value, or compatible extras.
+colors/models, two schedule rows for the same Tag with different products).
+NOT a conflict: synonyms, restating the same value, compatible extras, or "tag appears on drawing"
+vs a full schedule row (those are compatible unless product/color/rating disagrees).
 
-If conflict: which document has the INCORRECT info? Schedule/drawing usually wrong when
-it violates a written requirement; if two schedules disagree, pick the clearly wrong one.
+If conflict: which document has the INCORRECT info?
+- Cross-doc: schedule/drawing usually wrong when it violates a written requirement;
+  if schedule vs drawing product/color disagree, prefer citing the drawing OR schedule
+  that looks like the injected error (state both values clearly).
+- Same-doc duplicate Tag rows: cite that schedule file; describe both manufacturers/products.
 
 Respond with ONLY JSON:
 {{
@@ -431,8 +607,13 @@ If no conflict: {{"conflict": false}}
 
 def find_conflicts(item_map: ItemMap) -> list[dict[str, Any]]:
     errors: list[dict[str, Any]] = []
-    keys = multi_document_keys(item_map)
-    print(f"Conflict check on {len(keys)} multi-document key(s)…")
+    keys = conflict_candidate_keys(item_map)
+    multi = set(multi_document_keys(item_map))
+    intra = set(intra_document_conflict_keys(item_map))
+    print(
+        f"Conflict check on {len(keys)} key(s) "
+        f"(multi-doc={len(multi)}, intra-doc={len(intra)})…"
+    )
     for key in keys:
         try:
             err = resolve_conflict(key, item_map[key])

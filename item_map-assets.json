@@ -1,544 +1,1371 @@
 {
-  "MWP-1": [
+  "CG-1": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 1,
-      "text": "Color: FLAT BLACK 205"
+      "text": "Nicos Group; Wall to Wall Connections - Cleanroom System; 10 26 00; Wall and Door Protection; Wall Finish Accessories; STAINLESS STELL INSTALLATION"
+    },
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 1,
+      "text": "Inpro; Surface Mount Corner Guard - Wall Protection; 10 26 00; Wall and Door Protection; Wall Finish Accessories; STAINLESS STELL INSTALLATION"
     }
   ],
-  "MWP-2": [
+  "WV-1": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 1,
-      "text": "Color: CHARCOAL 534"
+      "text": "9Wood, Inc.; 1500 Baffle - Real Wood Veneer; 09 50 00; Ceilings; Ceilings; 2 3/4\" DIMENSION"
     }
   ],
-  "MWP-3": [
+  "UPH-1": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 1,
-      "text": "Color: CHARCOAL 534"
+      "text": "LDI Interiors; Tuft - Envirowoven\u2122; 09 72 19; Textile Wall Coverings; Upholstery;"
     }
   ],
   "MWP-4": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 1,
-      "text": "Color: OAKLINE, STYLE WALLFORMS"
+      "text": "USG; Pixels\u00ae - Wall Mounted Panels; 09 78 13; Metal Interior Wall Paneling; Wall Finishes; OAKLINE, STYLE WALLFORMS"
     }
   ],
-  "P-1B": [
+  "MWP-3": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 1,
-      "text": "Color: Cool December DEW383, Install: Semi-Gloss, Location: Doors & frames, refer to door schedule"
+      "text": "USG; Pixels\u00ae - Wall Mounted Panels; 09 78 13; Metal Interior Wall Paneling; Wall Finishes; CHARCOAL 534"
     }
   ],
-  "PL-1": [
+  "MWP-2": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 1,
-      "text": "Category: Kitchens, Bathrooms & Healthcare"
+      "text": "USG; Celebration\u2122 - Snap-In Metal Panels; 09 51 33; Acoustical Metal Pan Ceilings; Ceilings, Wall Finishes; COLOR: CHARCOAL 534"
+    }
+  ],
+  "MWP-1": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 1,
+      "text": "USG; Celebration\u2122 - Snap-In Metal Panels; 09 51 33; Acoustical Metal Pan Ceilings; Ceilings, Wall Finishes; Color: FLAT BLACK 205"
+    }
+  ],
+  "P-5": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 1,
+      "text": "Scuffmaster; Solid Metal - Interior Paint; 09 91 23; Interior Painting; Coatings; Color: Solid Metal, SM9502; Install: Metallic; Location: Walls & ceilings, watch center; Notes: Refer to specifications."
     }
   ],
   "PL-2": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 1,
-      "text": "Category: Kitchens, Bathrooms & Healthcare"
+      "text": "Formica Corporation; ColorCore\u00ae2 Compact - Formica\u00ae Compact; 06 61 16; Solid Surfacing; Fabrications; Furniture & Furniture Systems, Slabs & Countertops, Laboratories; Kitchens Bathrooms & Healthcare"
     }
   ],
-  "T-1": [
+  "PL-1": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 1,
-      "text": "Category: Flooring"
+      "text": "Formica Corporation; ColorCore\u00ae2 Compact - Formica\u00ae Compact; 06 61 16; Solid Surfacing; Fabrications; Furniture & Furniture Systems, Slabs & Countertops, Laboratories; Kitchens Bathrooms & Healthcare"
     }
   ],
-  "T-2": [
+  "FRP-1": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 1,
-      "text": "Category: Wall Finishes"
+      "text": "Marlite; Smooth Surface FRP; 09 00 00; Finishes; Wall Finishes, Ceilings;"
+    }
+  ],
+  "WP-1": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 1,
+      "text": "Acoufelt; Solid - Wall Panels; 09 51 00; Acoustical Ceilings; Wall Finishes, Ceilings;"
+    }
+  ],
+  "GWP-2": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 1,
+      "text": "Skyline Design; Vitracolor\u00ae Back-paint Glazing; ; ; ;"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "Wall Finish: GWP-2; Back-paint Glazing."
+    }
+  ],
+  "GWP-1": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 1,
+      "text": "Clarus; Float Depth - Wall Mounted Glass Boards; 09 00 00; Finishes; Wall Finishes, Ceilings;"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "Wall Finish: GWP-1; Wall Panels."
     }
   ],
   "T-3": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 1,
-      "text": "Category: Wall Finishes"
+      "text": "Bedrosians; Rectangular Clo\u00e9 - Ceramic Tile; 09 30 13; Ceramic Tiling; Wall Finishes;"
+    }
+  ],
+  "T-2": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 1,
+      "text": "Bedrosians; Sahara 3\" x 12\" - Matte Porcelain Tile; 09 30 00; Tiling; Flooring, Wall Finishes;"
+    }
+  ],
+  "T-1": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 1,
+      "text": "Ann Sacks; Penny Mosaic - Ceramic Tile; 09 30 13; Ceramic Tiling; Wall Finishes, Flooring;"
+    }
+  ],
+  "SS-3": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 1,
+      "text": "Cambria; Cambria Black - Quartz Countertops; 12 36 00; Countertops; Slabs & Countertops;"
+    }
+  ],
+  "SS-2": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 1,
+      "text": "Cambria; Kenwood - Quartz Countertops; 12 36 00; Countertops; Slabs & Countertops;"
+    }
+  ],
+  "P-1B": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 1,
+      "text": "Dunn-Edwards Paints; Suprema\u00ae - Ultra Premium Interior Paint; 09 91 00; Painting; Coatings; Color: Cool December DEW383; Install: Semi-Gloss; Location: Doors & frames, refer to door schedule"
+    }
+  ],
+  "TWB-1": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 1,
+      "text": "Bedrosians; Magnifica Solid - Porcelain Tile; 09 30 13; Ceramic Tiling; Flooring, Wall Finishes;"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "Base Finish: TWB-1; Floor Tile."
+    }
+  ],
+  "WB-2": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 1,
+      "text": "Roppe; Standard Toe - Pinnacle Rubber Base; 09 65 13; Resilient Base and Accessories; Wall Finish Accessories;"
+    }
+  ],
+  "WB-1": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 1,
+      "text": "Roppe; Standard Toe - Pinnacle Rubber Base; 09 65 13; Resilient Base and Accessories; Wall Finish Accessories;"
+    }
+  ],
+  "SS-1": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 1,
+      "text": "Cambria; St. Isley - Quartz Countertops; 12 36 00; Countertops; Slabs & Countertops;"
     }
   ],
   "P-4A": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 2,
-      "text": "Color: Jet Black DE6378, Install: Flat, Location: Gyp ceiling, refer to RCP & elevations"
-    },
+      "text": "Dunn-Edwards; Everest\u00ae - Ultra Premium Interior Paint; 09 91 00; Painting Coatings; Color: Jet Black DE6378; Install: Flat; Location: Gyp ceiling, refer to RCP & elevations"
+    }
+  ],
+  "WD-1": [
     {
-      "document": "1 - Drawings.pdf",
-      "page": 1,
-      "text": "Color: Jet Black DE6378, Install: Flat, Location: Gyp ceiling, refer to RCP & elevations."
+      "document": "InteriorsSchedule.pdf",
+      "page": 2,
+      "text": "USG Barz\u00ae - Baffles; 09 54 23; Linear Metal Ceilings; Wall Finishes, Ceilings; LOBBY CEILING, OAKLINE"
+    }
+  ],
+  "CON-1": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 2,
+      "text": "RetroPlate; Concrete Polishing System; 03 35 43; Polished Concrete Finishing; Flooring"
+    }
+  ],
+  "CON-2": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 2,
+      "text": "Euclid Chemical; Increte Vibra Stain SB - Polished Concrete; 09 93 00; Staining and Transparent Finishing; Coatings"
+    }
+  ],
+  "P-4": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 2,
+      "text": "Dunn-Edwards; Suprema\u00ae - Ultra Premium Interior Paint; 09 91 00; Painting Coatings; Color: Jet Black; Install: Velvet; Location: Walls, refer to finish plans"
     }
   ],
   "CPT-1": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 2,
-      "text": "Color: After Dark, Category: Carpeting, Location: Flooring"
+      "text": "Bentley Mills; After Dark - Carpet Tile; 09 68 00; Carpeting; Flooring"
     },
     {
       "document": "1 - Drawings.pdf",
       "page": 1,
-      "text": "Color: After Dark, Category: Carpeting, Location: Flooring."
+      "text": "Floor Finish: CPT-1; Bentley Mills After Dark - Carpet Tile."
     }
   ],
   "P-3B": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 2,
-      "text": "Color: Charcoal Smudge DE6370, Install: Eggshell, Location: Doors & frames, refer to door schedule"
+      "text": "Dunn-Edwards; Aristoshield\u00ae - Ultra Premium Interior/Exterior Paint; 09 91 00; Painting Coatings; Color: Charcoal Smudge DE6370; Install: Eggshell; Location: Doors & frames, refer to door schedule; Notes: Aristoshield 30"
     }
   ],
   "CPT-2": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 2,
-      "text": "Color: Buzz Worthy, Category: Carpeting, Location: Flooring"
+      "text": "Bentley Mills; Buzz Worthy - Carpet Tile; 09 68 00; Carpeting; Flooring"
     },
     {
       "document": "1 - Drawings.pdf",
       "page": 1,
-      "text": "Color: Buzz Worthy, Category: Carpeting, Location: Flooring."
+      "text": "Floor Finish: CPT-2; Bentley Mills Buzz Worthy - Carpet Tile."
+    }
+  ],
+  "P-3A": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 2,
+      "text": "Dunn-Edwards; Everest\u00ae - Ultra Premium Interior Paint; 09 91 00; Painting Coatings; Color: Charcoal Smudge DE6370; Install: Flat; Location: Gyp ceiling, refer to RCP & elevations"
     }
   ],
   "CPT-3": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 2,
-      "text": "Color: Karmic Relief, Category: Carpeting, Location: Flooring"
+      "text": "Interface; Karmic Relief - Rising Signs; 09 68 00; Carpeting; Flooring"
     },
     {
       "document": "1 - Drawings.pdf",
       "page": 1,
-      "text": "Color: Karmic Relief, Category: Carpeting, Location: Flooring."
+      "text": "Floor Finish: CPT-3; Bentley Mills Night Vision - Carpet Tile."
+    }
+  ],
+  "P-2A": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 2,
+      "text": "Dunn-Edwards; Everest\u00ae - Ultra Premium Interior Paint; 09 91 00; Painting Coatings; Color: Filtered Rays DE5438; Install: Flat; Location: Gyp ceiling, refer to RCP & elevations"
     }
   ],
   "CPT-4": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 2,
-      "text": "Color: Metalmorphic BT388, Category: Carpeting, Location: Flooring"
+      "text": "Mohawk Group; Metalmorphic BT388; 09 68 13; Tile Carpeting; Flooring"
     },
     {
       "document": "1 - Drawings.pdf",
       "page": 1,
-      "text": "Color: Metalmorphic BT388, Category: Carpeting, Location: Flooring."
+      "text": "Floor Finish: CPT-4; Bentley Mills Burnish - Carpet Tile."
     },
     {
       "document": "1 - Drawings.pdf",
       "page": 2,
-      "text": "Color: Metalmorphic BT388, Category: Carpeting, Location: Flooring."
+      "text": "Carpet Tile (18\" x 36\" Bentley Mills Burnish or approved equal)"
     }
   ],
   "CPT-5": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 2,
-      "text": "Color: Metalmorphic BT388, Category: Carpeting, Location: Flooring"
+      "text": "Mohawk Group; Metalmorphic BT388; 09 68 13; Tile Carpeting; Flooring"
     },
     {
       "document": "1 - Drawings.pdf",
       "page": 1,
-      "text": "Color: Metalmorphic BT388, Category: Carpeting, Location: Flooring."
-    },
+      "text": "Floor Finish: CPT-5; Bentley Mills Misfit - Carpet Tile."
+    }
+  ],
+  "ACT-4": [
     {
-      "document": "1 - Drawings.pdf",
+      "document": "InteriorsSchedule.pdf",
       "page": 2,
-      "text": "Color: Metalmorphic BT388, Category: Carpeting, Location: Flooring."
+      "text": "USG; Compositions\u00ae - Decorative Clouds; 09 54 00; Specialty Ceilings; Ceilings, Wall Finishes"
     }
   ],
   "CPT-6": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 2,
-      "text": "Color: LineD - 12 in x 36 in, Category: Carpeting, Location: Flooring"
+      "text": "Mohawk Group; LineD - 12 in x 36 in Carpet Tile; 09 68 13; Tile Carpeting; Flooring"
     },
     {
       "document": "1 - Drawings.pdf",
       "page": 1,
-      "text": "Color: LineD - 12 in x 36 in, Category: Carpeting, Location: Flooring."
-    },
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 2,
-      "text": "Color: LineD - 12 in x 36 in, Category: Carpeting, Location: Flooring."
+      "text": "Floor Finish: CPT-6; Bentley Mills Typecast - Carpet Tile."
     }
   ],
   "CPT-7": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 2,
-      "text": "Color: Line of Motion GT369, Category: Carpeting, Location: Flooring"
+      "text": "Mohawk Group; Line of Motion GT369; 09 68 13; Tile Carpeting; Flooring"
     },
     {
       "document": "1 - Drawings.pdf",
       "page": 1,
-      "text": "Color: Line of Motion GT369, Category: Carpeting, Location: Flooring."
+      "text": "Floor Finish: CPT-7; Mohawk First Step II - Walkoff Carpet Tile."
     }
   ],
-  "E-1": [
+  "ESD-1": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 2,
-      "text": "Color: Beige 24x24 Porcelain Tile - Plymouth, Category: Wall Finishes, Flooring"
-    },
+      "text": "Shaw Contract; Reed Sheet - Resilient Sheet; 09 65 33; Conductive Resilient Flooring; Flooring"
+    }
+  ],
+  "FLT-1": [
     {
-      "document": "1 - Drawings.pdf",
-      "page": 1,
-      "text": "Color: Beige 24x24 Porcelain Tile - Plymouth, Category: Wall Finishes, Flooring."
-    },
-    {
-      "document": "1 - Drawings.pdf",
+      "document": "InteriorsSchedule.pdf",
       "page": 2,
-      "text": "Color: Beige 24x24 Porcelain Tile - Plymouth, Category: Wall Finishes, Flooring."
+      "text": "Tile Point; Beige 24x24 Porcelain Tile - Plymouth; 09 30 13; Ceramic Tiling; Wall Finishes, Flooring"
     }
   ],
-  "P-1": [
+  "ACT-3": [
     {
       "document": "InteriorsSchedule.pdf",
-      "page": 3,
-      "text": "Color: Cool December DEW383, Install: Egg-Shell, Location: As noted on plans"
-    },
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 1,
-      "text": "Color: Cool December DEW383, Install: Egg-Shell, Location: As noted on plans."
-    },
-    {
-      "document": "1 - Drawings.pdf",
       "page": 2,
-      "text": "Color: Cool December DEW383, Install: Egg-Shell, Location: As noted on plans."
+      "text": "USG; Sheetrock\u00ae Brand - Clean Room\u2122 Lay-in Gypsum Ceiling Panels; 09 51 00; Acoustical Ceilings; Ceilings"
     }
   ],
-  "P-1C": [
+  "ACT-2": [
     {
       "document": "InteriorsSchedule.pdf",
-      "page": 3,
-      "text": "Color: Cool December DEW383, Install: Flat, Location: Gyp ceilings throughout, U. N.O"
-    }
-  ],
-  "P-1A": [
-    {
-      "document": "InteriorsSchedule.pdf",
-      "page": 3,
-      "text": "Color: Cool December DEW383, Install: Semi-Gloss, Location: Doors & frames, refer to door schedule"
-    }
-  ],
-  "P-2": [
-    {
-      "document": "InteriorsSchedule.pdf",
-      "page": 3,
-      "text": "Color: Filtered Rays DE5438, Install: Eggshell, Location: Walls, refer to finish plans"
-    },
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 1,
-      "text": "Color: Filtered Rays DE5438, Install: Eggshell, Location: Walls, refer to finish plans."
-    }
-  ],
-  "P-3": [
-    {
-      "document": "InteriorsSchedule.pdf",
-      "page": 3,
-      "text": "Color: Charcoal Smudge DE6370, Install: Velvet, Location: Walls, refer to finish plans"
-    },
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 1,
-      "text": "Color: Charcoal Smudge DE6370, Install: Velvet, Location: Walls, refer to finish plans."
-    },
-    {
-      "document": "1 - Drawings.pdf",
       "page": 2,
-      "text": "Color: Charcoal Smudge DE6370, Install: Velvet, Location: Walls, refer to finish plans."
-    }
-  ],
-  "GLF-1": [
-    {
-      "document": "InteriorsSchedule.pdf",
-      "page": 3,
-      "text": "Film type: Middle Grey Sand Blast Glazing, Location: Decorative Films, LLC."
-    }
-  ],
-  "GLF-2": [
-    {
-      "document": "InteriorsSchedule.pdf",
-      "page": 3,
-      "text": "Film type: Middle Grey Sand Blast Glazing, Location: Decorative Films, LLC."
-    }
-  ],
-  "RSH-2": [
-    {
-      "document": "InteriorsSchedule.pdf",
-      "page": 3,
-      "text": "Type: Roller Window Shades, Fascia and hardware to be clear anodized, manual"
-    },
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 1,
-      "text": "Type: Roller Window Shades, Fascia and hardware to be clear anodized, manual."
-    },
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 2,
-      "text": "Type: Roller Window Shades, Fascia and hardware to be clear anodized, manual."
-    }
-  ],
-  "RSH-01": [
-    {
-      "document": "InteriorsSchedule.pdf",
-      "page": 3,
-      "text": "Type: Roller Window Shades, Fascia and hardware to be clear anodized, manual"
+      "text": "Sound Seal; Chroma (Paintable) - Acoustic Wall Panel; 09 84 13; Fixed Sound-Absorptive Panels; Ceilings, Wall Finishes; DIRECT MOUNT TO STRUCTURE, COLOR: WHITE, PAINT-READY FIBER VEIL, SIZE 2' X 4', LOCATION: AS NOTED ON RCP"
     }
   ],
   "ACT-1": [
     {
       "document": "InteriorsSchedule.pdf",
       "page": 3,
-      "text": "Type: Acoustical Panels, Category: Acoustical Panel Ceilings"
+      "text": "USG; Mars\u2122 High-NRC/High-CAC Acoustical Panels; 09 51 13; Acoustical Panel Ceilings; Ceilings;"
     }
   ],
-  "L-1": [
+  "GLF-2": [
     {
-      "document": "MEPSchedule.pdf",
-      "page": 1,
-      "text": "Fixture shall provide ASSE 1070 device."
+      "document": "InteriorsSchedule.pdf",
+      "page": 3,
+      "text": "Decorative Films, LLC.; SOLYX SXB-74-UG - Middle Grey Sand Blast Glazing Films; GLF-2;"
+    }
+  ],
+  "GLF-1": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 3,
+      "text": "Decorative Films, LLC.; SOLYX SXB-74-UG - Middle Grey Sand Blast Glazing Films; GLF-1;"
+    }
+  ],
+  "RSH-2": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 3,
+      "text": "Mecho; SoHo - 1100 Series, 1600 Series, 1900 Series; 12 24 13; Roller Window Shades; Shutters Curtains & Window Treatments; FASCIA AND HARDWARE TO BE CLEAR ANODIZED, MANUAL"
+    }
+  ],
+  "RSH-01": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 3,
+      "text": "Mecho; SoHo - 1100 Series, 1600 Series, 1900 Series; 12 24 13; Roller Window Shades; Shutters Curtains & Window Treatments; FASCIA AND HARDWARE TO BE CLEAR ANODIZED, MANUAL"
+    }
+  ],
+  "P-1": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 3,
+      "text": "Dunn-Edwards Paints; Everest\u00ae - Ultra Premium Interior Paint; 09 91 00; Painting; Coatings; LEED V5 MRc4 Building Product Selection and Procurement Multi-Attribute Score minimum of 5; Color: Cool December DEW383; Install: Egg-Shell; Location: As noted on plans"
     },
     {
       "document": "1 - Drawings.pdf",
       "page": 1,
-      "text": "Fixture shall provide ASSE 1070 device."
+      "text": "Wall Finish: P-1; All walls to be painted P-1 unless noted otherwise."
+    }
+  ],
+  "P-1C": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 3,
+      "text": "Dunn-Edwards Paints; Enduracat\u00ae - Light Duty Pre-Catalyzed Waterbased Epoxy; 09 97 13; Steel Coatings; Coatings; Color: Cool December DEW383; Install: Flat; Location: Gyp ceilings throughout, U. N.O"
+    }
+  ],
+  "P-1A": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 3,
+      "text": "Dunn-Edwards Paints; Everest\u00ae - Ultra Premium Interior Paint; 09 91 00; Painting; Coatings; Color: Cool December DEW383; Install: Semi-Gloss; Location: Doors & frames, refer to door schedule"
+    }
+  ],
+  "P-2": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 3,
+      "text": "Dunn-Edwards Paints; Everest\u00ae - Ultra Premium Interior Paint; 09 91 00; Painting; Coatings; Color: Filtered Rays DE5438; Install: Eggshell; Location: Walls, refer to finish plans"
+    }
+  ],
+  "P-3": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "page": 3,
+      "text": "Dunn-Edwards Paints; Suprema\u00ae - Ultra Premium Interior Paint; 09 91 00; Painting; Coatings; Color: Charcoal Smudge DE6370; Install: Velvet; Location: Walls, refer to finish plans"
+    }
+  ],
+  "DF-2": [
+    {
+      "document": "MEPSchedule.pdf",
+      "page": 1,
+      "text": "Elkay; EFA8L1Z; Plumbing Fixtures; Accessories & Distribution; PROVIDE MANUFACTURER AND MODEL NUMBER AS LISTED OR APPROVED EQUAL."
     },
     {
       "document": "1 - Drawings.pdf",
       "page": 6,
-      "text": "Fixture shall provide ASSE 1070 device."
+      "text": "Terminate 3/4\" condensate drain at existing floor sink or drain with a minimum 2\" air gap."
+    }
+  ],
+  "GD-1": [
+    {
+      "document": "MEPSchedule.pdf",
+      "page": 1,
+      "text": "Insinkerator; Badger 5 Garbage Disposal, 1/2 HP; 22 41 26; Residential Disposers; PROVIDE MANUFACTURER AND MODEL NUMBER AS LISTED OR APPROVED EQUAL. 120 V"
+    }
+  ],
+  "EWH-1": [
+    {
+      "document": "MEPSchedule.pdf",
+      "page": 1,
+      "text": "Victoria + Albert; High Performance Hot Water Tank | Model Number: U.1998; Plumbing Fixtures; Accessories & Distribution; ELECTRIC WATER HEATER. PROVIDE MANUFACTURER AND MODEL AS LISTED OR APPROVED EQUAL."
+    }
+  ],
+  "DWH-1": [
+    {
+      "document": "MEPSchedule.pdf",
+      "page": 1,
+      "text": "Colmac WaterHeat; CXW Series - Water Source Heat Pump Water Heater; Specialty Equipment & Appliances; ELECTRIC STORAGE DOMESTIC WATER HEATER. REFER TO SPEC 22 33 00."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 6,
+      "text": "Existing Water Source Heat Pump Water Heater; Specialty Equipment & Appliances; ELECTRIC STORAGE DOMESTIC WATER HEATER."
     },
     {
       "document": "1 - Drawings.pdf",
       "page": 7,
-      "text": "Fixture shall provide ASSE 1070 device."
+      "text": "Colmac WaterHeat; CXW Series - Water Source Heat Pump Water Heater; Specialty Equipment & Appliances; ELECTRIC STORAGE DOMESTIC WATER HEATER."
+    }
+  ],
+  "MS-1": [
+    {
+      "document": "MEPSchedule.pdf",
+      "page": 1,
+      "text": "Elkay; FLR-3X; Plumbing Fixtures; Accessories & Distribution; PROVIDE MANUFACTURER AND MODEL NUMBER AS LISTED OR APPROVED EQUAL."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 7,
+      "text": "Elkay; FLR-3X; Plumbing Fixtures; Accessories & Distribution; PROVIDE MANUFACTURER AND MODEL NUMBER AS LISTED OR APPROVED EQUAL."
     }
   ],
   "L-2": [
     {
       "document": "MEPSchedule.pdf",
       "page": 1,
-      "text": "Fixture shall provide ASSE 1070 device."
+      "text": "American Standard; Aspirations Under Counter Sink; 22 40 00; Plumbing Fixtures; Accessories & Distribution; PROVIDE ASSE 1070 DEVICE. PROVIDE MANUFACTURER AND MODEL NUMBER AS LISTED OR APPROVED EQUAL."
     },
     {
       "document": "1 - Drawings.pdf",
       "page": 7,
-      "text": "Fixture shall provide ASSE 1070 device."
+      "text": "American Standard; Aspirations Under Counter Sink; 22 40 00; Plumbing Fixtures; Accessories & Distribution; PROVIDE ASSE 1070 DEVICE."
+    }
+  ],
+  "L-1": [
+    {
+      "document": "MEPSchedule.pdf",
+      "page": 1,
+      "text": "American Standard; Studio Under Counter Sink; 22 40 00; Plumbing Fixtures; Accessories & Distribution; PROVIDE ASSE 1070 DEVICE. PROVIDE MANUFACTURER AND MODEL NUMBER AS LISTED OR APPROVED EQUAL."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 6,
+      "text": "American Standard; Studio Under Counter Sink; 22 40 00; Plumbing Fixtures; Accessories & Distribution; PROVIDE ASSE 1070 DEVICE."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 7,
+      "text": "American Standard; Studio Under Counter Sink; 22 40 00; Plumbing Fixtures; Accessories & Distribution; PROVIDE ASSE 1070 DEVICE."
+    }
+  ],
+  "KS-1": [
+    {
+      "document": "MEPSchedule.pdf",
+      "page": 1,
+      "text": "Elkay; Circuit Chef Workstation Stainless Steel 45-1/2\" x 20-1/2\" x 10\" Single Bowl Undermount Sink Kit - with White Polymer Boards; Plumbing Fixtures; Accessories & Distribution; PROVIDE MANUFACTURER AND MODEL NUMBER AS LISTED OR APPROVED EQUAL."
     }
   ],
   "U-1": [
     {
       "document": "MEPSchedule.pdf",
       "page": 1,
-      "text": "Urinal system has a flow rate of 0.125 GPF."
-    },
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 7,
-      "text": "Urinal system has a flow rate of 0.125 GPF."
+      "text": "Zurn; Zurn One EcoVantage\u00ae Urinal System wih Top Mount 0.125 GPF Hydropower Sensor Flush Valve; Plumbing Fixtures; Accessories & Distribution; VITREOUS CHINA, WALL-MOUNT. PROVIDE MANUFACTURER AND MODEL NUMBER AS LISTED OR APPROVED EQUAL."
     }
   ],
   "WC-2": [
     {
       "document": "MEPSchedule.pdf",
       "page": 1,
-      "text": "Toilet system shall be Watersense labeled."
-    },
-    {
-      "document": "MEPSchedule.pdf",
-      "page": 2,
-      "text": "Toilet system shall be Watersense labeled."
-    },
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 1,
-      "text": "Toilet system shall be Watersense labeled."
+      "text": "American Standard; Afwall Millennium Wall-Hung Toilet System - EverClean with Touchless Selectronic Piston Flush Valve, 1.28 gpf/4.8 Lpf; 22 40 00; Plumbing Fixtures; Accessories & Distribution; FIXTURE SHALL BE WATERSENSE LABELED. PROVIDE MANUFACTURER AND MODEL NUMBER AS LISTED OR APPROVED EQUAL."
     },
     {
       "document": "1 - Drawings.pdf",
       "page": 6,
-      "text": "Toilet system shall be Watersense labeled."
-    },
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 7,
-      "text": "Toilet system shall be Watersense labeled."
+      "text": "Water Closet; Plumbing Fixtures; Accessories & Distribution."
     }
   ],
   "WC-1": [
     {
       "document": "MEPSchedule.pdf",
       "page": 2,
-      "text": "Fixture shall be Watersense labeled."
+      "text": "American Standard; Afwall ADA Retrofit; 1.28 1.6 gpf (4.8 6.0 Lpf); Top Spud Elongated Wall-Hung EverClean Bowl; 22 40 00; Plumbing Fixtures; FIXTURE SHALL BE WATERSENSE LABELED; PROVIDE MANUFACTURER AND MODEL NUMBER AS LISTED OR APPROVED EQUAL."
+    }
+  ],
+  "DF-1": [
+    {
+      "document": "MEPSchedule.pdf",
+      "page": 2,
+      "text": "Elkay; EZWS-EDFPBM117K; Plumbing Fixtures; Accessories & Distribution; PROVIDE MANUFACTURER AND MODEL NUMBER AS LISTED OR APPROVED EQUAL."
     },
     {
       "document": "1 - Drawings.pdf",
+      "page": 6,
+      "text": "Provide 3/4\" trapped and vented condensate drain. See detail 32/P7.1."
+    }
+  ],
+  "N104B": [
+    {
+      "document": "1 - Drawings.pdf",
       "page": 1,
-      "text": "Fixture shall be Watersense labeled."
+      "text": "OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1"
+    }
+  ],
+  "N104A": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1"
+    }
+  ],
+  "N120E": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "N120F": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "N120G": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "N120K": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "N120J": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "N120H": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "N139": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "VENDING; Floor Finish: CONC-2; Base Finish: WB-2; Wall Finish: P-1/4"
+    }
+  ],
+  "N102": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "STUDENT LIVING ROOM; Floor Finish: CPT-8; Base Finish: WB-2; Wall Finish: P-1/4"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: STUDENT LIVING ROOM; Floor Finish: CPT-8; Base Finish: WB-2; Wall Finish: P-1/4."
+    }
+  ],
+  "N123": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "ONLINE STUDIO; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: ONLINE STUDIO; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "N115": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "GRAD LAB MEDIUM; Floor Finish: CPT-2/3; Base Finish: WB-2; Wall Finish: P-1"
+    }
+  ],
+  "N116": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "GRAD LAB MEDIUM; Floor Finish: CPT-2/3; Base Finish: WB-2; Wall Finish: P-1"
+    }
+  ],
+  "N106": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "CLASSROOM (40); Floor Finish: CPT-2/3; Base Finish: WB-2; Wall Finish: P-1/4"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: CLASSROOM (40); Floor Finish: CPT-2/3; Base Finish: WB-2; Wall Finish: P-1/4."
+    }
+  ],
+  "N112": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "COMPUTER LAB; Floor Finish: CPT-2/3; Base Finish: WB-2; Wall Finish: P-1/5"
+    }
+  ],
+  "N104": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "CIRCULATION; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1/2"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: CIRCULATION; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1/2."
+    }
+  ],
+  "N120": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "CIRCULATION; Floor Finish: CPT-1/2; Base Finish: WB-2; Wall Finish: P-1/2"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: CIRCULATION; Floor Finish: CPT-1/2; Base Finish: WB-2; Wall Finish: P-1/2."
+    }
+  ],
+  "N101": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "VESTIBULE; Base Finish: WB-2; Wall Finish: P-1/4; Ceiling Finish: MWP-1/2"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: EAST CORRIDOR; Floor Finish: CONC-1; Base Finish: WB-1; Wall Finish: P-1."
+    }
+  ],
+  "N107B": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "COLLAB.; Floor Finish: CONC-1/CPT-3; Base Finish: WB-2; Wall Finish: P-1/2/4"
+    }
+  ],
+  "N140": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "ELEC.; Floor Finish: CONC-1; Base Finish: WB-2; Wall Finish: P-1"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 4,
+      "text": "Room Name: ELEC.; Floor Finish: CONC-1; Base Finish: WB-2; Wall Finish: P-1."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: ELEC.; Floor Finish: CONC-1; Base Finish: WB-2; Wall Finish: P-1."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 7,
+      "text": "ELEC.; Floor Finish: CONC-1; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "E-197": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "JC; Floor Finish: CONC-1; Base Finish: WB-1; Wall Finish: P-1"
+    }
+  ],
+  "N120D": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "N104C": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1"
+    }
+  ],
+  "N141": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "EXISTING WOMEN'S RESTROOM; Floor Finish: CPT-2; Base Finish: TWB-1; Wall Finish: P-1/T-1/3"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: EXISTING WOMEN'S RESTROOM; Floor Finish: CPT-2; Base Finish: TWB-1; Wall Finish: P-1/T-1/3."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 7,
+      "text": "EXISTING WOMEN'S RESTROOM; Floor Finish: CPT-2; Base Finish: TWB-1; Wall Finish: P-1/T-1/3."
+    }
+  ],
+  "N142": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "EXISTING MEN'S RESTROOM; Floor Finish: FTL-1; Base Finish: TWB-1; Wall Finish: P-1/T-2/3"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: EXISTING MEN'S RESTROOM; Floor Finish: FTL-1; Base Finish: TWB-1; Wall Finish: P-1/T-2/3."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 7,
+      "text": "EXISTING MEN'S RESTROOM; Floor Finish: FTL-1; Base Finish: TWB-1; Wall Finish: P-1/T-2/3."
+    }
+  ],
+  "N103": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "CAFE; Floor Finish: CONC-2; Base Finish: WB-2; Wall Finish: P-1"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: CAFE; Floor Finish: CONC-2; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "N120A": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "PROGRAM ASST.; Floor Finish: CPT-1/2; Base Finish: WB-2; Wall Finish: P-1"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: PROGRAM ASST.; Floor Finish: CPT-1/2; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "N120B": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "COPY OFFICE SUPPLIES; Floor Finish: CPT-1/2; Base Finish: WB-2; Wall Finish: P-1"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: COPY OFFICE SUPPLIES; Floor Finish: CPT-1/2; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "N120C": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "SMALL CONFERENCE; Floor Finish: CPT-1/2; Base Finish: WB-2; Wall Finish: P-1"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: SMALL CONFERENCE; Floor Finish: CPT-1/2; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "N111": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "CYBER RANGE LAB; Floor Finish: CPT-2/3; Base Finish: WB-2; Wall Finish: P-1"
+    }
+  ],
+  "N110": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "GRAD LAB LARGE; Floor Finish: CPT-2/3; Base Finish: WB-2; Wall Finish: P-1"
+    }
+  ],
+  "N114": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "GRAD LAB LARGE; Floor Finish: CPT-2/3; Base Finish: WB-2; Wall Finish: P-1"
+    }
+  ],
+  "N104F": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1"
+    }
+  ],
+  "N104E": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1"
+    }
+  ],
+  "N104D": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "OFFICE; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1"
+    }
+  ],
+  "N105": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "EXECUTIVE CONFERENCE; Floor Finish: CPT-2/3; Base Finish: WB-2; Wall Finish: P-1/4"
+    }
+  ],
+  "N119": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "CIRCULATION; Floor Finish: CONC-1; Base Finish: WB-2; Wall Finish: P-1"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 3,
+      "text": "Room Name: CIRCULATION; Floor Finish: CONC-1; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "N117": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "GRAD LAB MEDIUM; Floor Finish: CPT-2/3; Base Finish: WB-2; Wall Finish: P-1"
+    }
+  ],
+  "N118": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "GRAD LAB MEDIUM; Floor Finish: CPT-2/3; Base Finish: WB-2; Wall Finish: P-1"
+    }
+  ],
+  "CONC-1": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "Floor Finish: CONC-1; Polished Concrete."
+    }
+  ],
+  "CONC-2": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "Floor Finish: CONC-2; Polished Concrete - Stained."
+    }
+  ],
+  "FTL-1": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 1,
+      "text": "Floor Finish: FTL-1; Bedrosian Metro 2.0 24\" x 24\" Floor Tile."
+    }
+  ],
+  "S101": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 2,
+      "text": "Room Name: RECEPTION; Floor Finish: CPT-4/6; Base Finish: WB-1; Wall Finish: P-1/3"
+    }
+  ],
+  "S101A": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 2,
+      "text": "Room Name: SMALL CONFERENCE; Floor Finish: CPT-6; Base Finish: WB-1; Wall Finish: P-1"
+    }
+  ],
+  "S107": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 2,
+      "text": "Room Name: WATCH CENTER; Floor Finish: CPT-5; Base Finish: WB-2; Wall Finish: P-3/5"
+    }
+  ],
+  "S108": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 2,
+      "text": "Room Name: CIRCULATION; Floor Finish: CPT-4; Base Finish: WB-1; Wall Finish: P-1/3"
+    }
+  ],
+  "S108B": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 2,
+      "text": "Room Name: OFFICE; Floor Finish: CPT-6; Base Finish: WB-1; Wall Finish: P-1"
+    }
+  ],
+  "S108C": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 2,
+      "text": "Room Name: OFFICE; Floor Finish: CPT-6; Base Finish: WB-1; Wall Finish: P-1"
+    }
+  ],
+  "S108D": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 2,
+      "text": "Room Name: OFFICE; Floor Finish: CPT-6; Base Finish: WB-1; Wall Finish: P-1"
+    }
+  ],
+  "S108E": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 2,
+      "text": "Room Name: OFFICE; Floor Finish: CPT-6; Base Finish: WB-1; Wall Finish: P-1"
+    }
+  ],
+  "S102A": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 2,
+      "text": "Room Name: CVL VESTIBULE; Floor Finish: ESD-1; Base Finish: WB-1; Wall Finish: P-1C"
+    }
+  ],
+  "S102": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 2,
+      "text": "Room Name: CYBER VULNERABILITY LAB; Floor Finish: CPT-6; Base Finish: WB-1; Wall Finish: P-1C"
+    }
+  ],
+  "S103": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 2,
+      "text": "Room Name: DATA/SERVER; Floor Finish: CONC-1; Base Finish: WB-1; Wall Finish: P-1"
+    }
+  ],
+  "S105": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 2,
+      "text": "Room Name: ELEC.; Floor Finish: CONC-1; Base Finish: WB-1; Wall Finish: P-1"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 4,
+      "text": "Room Name: ISAC ELECTRICAL ROOM; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "S109": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 2,
+      "text": "Room Name: CIRCULATION; Floor Finish: CONC-1; Base Finish: WB-1; Wall Finish: P-1"
+    }
+  ],
+  "S100": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 2,
+      "text": "Room Name: EAST CORRIDOR; Floor Finish: CONC-1; Base Finish: WB-1; Wall Finish: P-1"
+    }
+  ],
+  "N113A": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 3,
+      "text": "Room Name: COLLAB.; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "N113B": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 3,
+      "text": "Room Name: GRAD COLLABORATION."
+    }
+  ],
+  "N108": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 3,
+      "text": "Room Name: TOILET; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: TOILET; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 6,
+      "text": "Room Name: TOILET; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 7,
+      "text": "TOILET; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "N109": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 3,
+      "text": "Room Name: MEN; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Room Name: MEN; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 6,
+      "text": "Room Name: MEN; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 7,
+      "text": "MEN; Floor Finish: CPT-1; Base Finish: WB-2; Wall Finish: P-1."
+    }
+  ],
+  "E205": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 3,
+      "text": "Provide 4\"X24\" copper ground bar, storm power components #SCGB-12KT / COVER-375-24, or equal. Install provided mounted brackets, isolators and cover per manufacturer specifications. Mount @ 96\" AFF to middle of ground bar. Provide insulated #4 copper ground conductor and bond to grounding electrode system."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 4,
+      "text": "Provide 4\"X24\" copper ground bar, storm power components #SCGB-12KT / COVER-375-24, or equal. Install provided mounted brackets, isolators and cover per manufacturer specifications. Mount @ 96\" AFF to middle of ground bar. Provide insulated #4 copper ground conductor and bond to grounding electrode system."
+    }
+  ],
+  "E223": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 3,
+      "text": "Replace existing receptacle(s) in this area/room with new in existing location(s). Reuse existing circuiting."
+    }
+  ],
+  "E225": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 4,
+      "text": "Provide structural mounting frame suitable for stack mounting transformer above floor mounted transformer. Include shop drawings stamped by structural engineer in transformer submittal."
+    }
+  ],
+  "E502": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 4,
+      "text": "Provide 1.6KVA emergency lighting inverter, MYERS ILLUMINATOR EM #6-EM-2-S-B-D-20-02-TW, 65KAIC, or equal. Install per equipment manufacturer specifications. Include startup, training and extended warranty."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Provide 1.6KVA emergency lighting inverter, MYERS ILLUMINATOR EM #6-EM-2-S-B-D-20-02-TW, 65KAIC, or equal."
+    }
+  ],
+  "E503": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 4,
+      "text": "Provide 3.75KVA emergency lighting inverter, MYERS ILLUMINATOR SUPERNOVA #6-I-03-S-B-A-20-03-T, 65KAIC, or equal. Install per equipment manufacturer specifications. Include startup, training and extended warranty."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "Provide 3.75KVA emergency lighting inverter, MYERS ILLUMINATOR SUPERNOVA #6-I-03-S-B-A-20-03-T, 65KAIC, or equal."
     }
   ],
   "MSB-NORTH": [
     {
       "document": "1 - Drawings.pdf",
       "page": 5,
-      "text": "Existing MSB NORTH has a rating of 4000A/480-277/3PH/4W with a 65kAIC."
-    }
-  ],
-  "MSB-SOUTH": [
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 5,
-      "text": "Existing MSB SOUTH has a rating of 4000A/480-277/3PH/4W with a 65kAIC."
+      "text": "Existing Switchboard: MSB-NORTH, 4000A/480-277/3PH/4W, 65kAIC."
     }
   ],
   "ISACHA": [
     {
       "document": "1 - Drawings.pdf",
       "page": 5,
-      "text": "ISACHA has a rating of 400A."
-    }
-  ],
-  "UCCSHA": [
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 5,
-      "text": "UCCSHA has a rating of 400A."
-    }
-  ],
-  "UCCSLA": [
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 5,
-      "text": "UCCSLA has a rating of 225A."
-    }
-  ],
-  "UCCSLC": [
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 5,
-      "text": "UCCSLC has a rating of 225A."
-    }
-  ],
-  "UCCSLD": [
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 5,
-      "text": "UCCSLD has a rating of 225A."
-    }
-  ],
-  "UCCSLB": [
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 5,
-      "text": "UCCSLB has a rating of 225A."
-    }
-  ],
-  "UCCSA": [
-    {
-      "document": "1 - Drawings.pdf",
-      "page": 5,
-      "text": "UCCSA has a rating of 100A."
+      "text": "ISACHA, 480/277V, 400A, MLO."
     }
   ],
   "ISACLA": [
     {
       "document": "1 - Drawings.pdf",
       "page": 5,
-      "text": "ISACLA has a rating of 125A."
+      "text": "ISACLA, 208/120V, 125A, MCB."
     }
   ],
   "ISACWA": [
     {
       "document": "1 - Drawings.pdf",
       "page": 5,
-      "text": "ISACWA has a rating of 125A."
+      "text": "ISACWA, 208/120V, 125A, MCB/FTL."
     }
   ],
   "ISACWB": [
     {
       "document": "1 - Drawings.pdf",
       "page": 5,
-      "text": "ISACWB has a rating of 125A."
+      "text": "ISACWB, 208/120V, 125A, MLO."
     }
   ],
   "ISACSA": [
     {
       "document": "1 - Drawings.pdf",
       "page": 5,
-      "text": "ISACSA has a rating of 200A."
+      "text": "ISACSA, 208/120V, 200A, MCB."
     }
   ],
-  "T-ISAC-LA": [
+  "UCCSHA": [
     {
       "document": "1 - Drawings.pdf",
       "page": 5,
-      "text": "T-ISAC-LA has a rating of 75kVA."
+      "text": "UCCSHA, 480/277V, 400A, MLO."
     }
   ],
-  "T-ISAC-WA": [
+  "UCCSLC": [
     {
       "document": "1 - Drawings.pdf",
       "page": 5,
-      "text": "T-ISAC-WA has a rating of 75kVA."
+      "text": "UCCSLC, 208/120V, 225A, MCB/FTL."
     }
   ],
-  "T-UCCS-LA": [
+  "UCCSLD": [
     {
       "document": "1 - Drawings.pdf",
       "page": 5,
-      "text": "T-UCCS-LA has a rating of 150kVA."
+      "text": "UCCSLD, 208/120V, 225A, MLO."
+    }
+  ],
+  "UCCSLA": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "UCCSLA, 208/120V, 225A, MCB/FTL."
+    }
+  ],
+  "UCCSLB": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "UCCSLB, 208/120V, 225A, MLO."
+    }
+  ],
+  "UCCSA": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "UCCSA, 208/120V, 100A, MCB."
+    }
+  ],
+  "T-ISAC-SA": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "T-ISAC-SA, 75kVA K13, 480-208/120V."
+    }
+  ],
+  "T-UCCS-LA/LC": [
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 5,
+      "text": "T-UCCS-LA/LC, 150kVA K13, 480-208/120V."
     }
   ],
   "T-UCCS-SA": [
     {
       "document": "1 - Drawings.pdf",
       "page": 5,
-      "text": "T-UCCS-SA has a rating of 30kVA."
+      "text": "T-UCCS-SA, 30kVA K13, 480-208/120V."
     }
   ],
-  "T30": [
+  "P-4.1": [
     {
       "document": "1 - Drawings.pdf",
-      "page": 5,
-      "text": "T30 is a 30KVA transformer, 480-208Y/120V, 3PH."
-    }
-  ],
-  "E501": [
+      "page": 6,
+      "text": "Slope sanitary waste pipe 3\" or larger at 1/8\" per foot (1 percent) unless otherwise noted."
+    },
     {
       "document": "1 - Drawings.pdf",
-      "page": 5,
-      "text": "E501 requires a new circuit breaker that matches the existing circuit breaker type and manufacturer."
-    }
-  ],
-  "E502": [
+      "page": 6,
+      "text": "Slope sanitary waste pipe 2-1/2\" and smaller at 1/4\" per foot (2 percent) unless otherwise noted."
+    },
     {
       "document": "1 - Drawings.pdf",
-      "page": 5,
-      "text": "E502 provides a 1.6kVA emergency lighting inverter."
-    }
-  ],
-  "E503": [
+      "page": 6,
+      "text": "Slope condensate drain at 1/8\" per foot (1 percent) unless otherwise noted."
+    },
     {
       "document": "1 - Drawings.pdf",
-      "page": 5,
-      "text": "E503 provides a 3.75kVA emergency lighting inverter."
+      "page": 6,
+      "text": "All horizontal drains shall be provided with cleanouts located no more than 100 feet apart."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 6,
+      "text": "Cleanouts shall be installed at the base of all stacks and each change of direction greater than 45 degrees."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 6,
+      "text": "All floor drains and floor sinks shall be provided with trap guard."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 6,
+      "text": "Provide shut-off valve at each equipment and fixture connection."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 6,
+      "text": "Refer to service connection schedule for pipe size to fixtures."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 6,
+      "text": "See structural drawings for slab-on-grade infill."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 7,
+      "text": "Slope sanitary waste pipe 3\" or larger at 1/8\" per foot (1 percent) unless otherwise noted."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 7,
+      "text": "Slope sanitary waste pipe 2-1/2\" and smaller at 1/4\" per foot (2 percent) unless otherwise noted."
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "page": 7,
+      "text": "Slope condensate drain at 1/8\" per foot (1 percent) unless otherwise noted."
     }
   ]
 }

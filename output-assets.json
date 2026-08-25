@@ -1,3 +1,34 @@
 {
-  "errors": []
+  "errors": [
+    {
+      "document": "InteriorsSchedule.pdf",
+      "category": "cross-document-conflict",
+      "description": "Item key CPT-3 has conflicting carpet specifications: 'Karmic Relief - Rising Signs' in InteriorsSchedule.pdf vs 'Bentley Mills Night Vision - Carpet Tile' in 1 - Drawings.pdf.",
+      "location": "page 2, item key CPT-3, Karmic Relief - Rising Signs vs Bentley Mills Night Vision"
+    },
+    {
+      "document": "InteriorsSchedule.pdf",
+      "category": "cross-document-conflict",
+      "description": "Item key CPT-4 has conflicting manufacturers: 'Mohawk Group; Metalmorphic BT388' in InteriorsSchedule.pdf is incorrect compared to 'Bentley Mills Burnish' in 1 - Drawings.pdf.",
+      "location": "page 2; item key: CPT-4; 'Mohawk Group; Metalmorphic BT388' vs 'Bentley Mills Burnish'"
+    },
+    {
+      "document": "1 - Drawings.pdf",
+      "category": "cross-document-conflict",
+      "description": "Item key CPT-5 has conflicting information: 'Bentley Mills Misfit - Carpet Tile' is incorrect, as the correct value is 'Mohawk Group; Metalmorphic BT388; 09 68 13; Tile Carpeting; Flooring' from InteriorsSchedule.pdf.",
+      "location": "page 1; CPT-5; Bentley Mills Misfit - Carpet Tile"
+    },
+    {
+      "document": "InteriorsSchedule.pdf",
+      "category": "cross-document-conflict",
+      "description": "Item key CPT-6 has conflicting manufacturers: 'Mohawk Group' in InteriorsSchedule.pdf and 'Bentley Mills' in 1 - Drawings.pdf.",
+      "location": "page 2; CPT-6; Mohawk Group vs Bentley Mills Typecast"
+    },
+    {
+      "document": "InteriorsSchedule.pdf",
+      "category": "cross-document-conflict",
+      "description": "Item key CPT-7 has conflicting information: 'Line of Motion GT369' in InteriorsSchedule.pdf vs 'Mohawk First Step II - Walkoff Carpet Tile' in 1 - Drawings.pdf.",
+      "location": "page 2; CPT-7; Line of Motion GT369 vs Mohawk First Step II"
+    }
+  ]
 }

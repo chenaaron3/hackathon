@@ -162,3 +162,4 @@ npm run keys -- delete-all     # cleanup after the event
 
 OpenRouter keys have spend limits but no native expiry — the cutoff is
 `disable-all`, run at the announced end time.
+# hackathon

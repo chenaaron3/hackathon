@@ -1,0 +1,38 @@
+{
+  "D-202": [
+    {
+      "document": "schedule.pdf",
+      "page": 1,
+      "text": "Fire rating is 45 min."
+    },
+    {
+      "document": "spec.pdf",
+      "page": 1,
+      "text": "Doors at mechanical rooms shall carry a 90-minute fire rating."
+    }
+  ],
+  "D-203": [
+    {
+      "document": "schedule.pdf",
+      "page": 1,
+      "text": "Fire rating is 20 min."
+    },
+    {
+      "document": "spec.pdf",
+      "page": 1,
+      "text": "Doors at storage rooms shall carry a 20-minute fire rating."
+    }
+  ],
+  "L-1": [
+    {
+      "document": "schedule.pdf",
+      "page": 1,
+      "text": "Flow rate is 5.0 gpm."
+    },
+    {
+      "document": "spec.pdf",
+      "page": 1,
+      "text": "Lavatory faucets: 0.5 gpm aerators maximum per energy code."
+    }
+  ]
+}

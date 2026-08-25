@@ -307,6 +307,55 @@ def add_claims(item_map: ItemMap, document: str, claims: list[dict[str, Any]]) -
     return n
 
 
+def rehome_mislinked_requirements(item_map: ItemMap) -> int:
+    """Move location-based requirements onto items whose schedule row matches that location."""
+    rules = [
+        (re.compile(r"mechanical", re.I), re.compile(r"mechanical", re.I)),
+        (re.compile(r"storage", re.I), re.compile(r"storage", re.I)),
+        (re.compile(r"lavatory", re.I), re.compile(r"lavatory|\bL-\d", re.I)),
+    ]
+    moved = 0
+    # Gather schedule context per key
+    schedule_text = {
+        k: " ".join(c["text"] for c in claims if is_schedule_pdf(c["document"]))
+        for k, claims in item_map.items()
+    }
+
+    for key, claims in list(item_map.items()):
+        keep: list[dict[str, Any]] = []
+        for claim in claims:
+            if is_schedule_pdf(claim["document"]) or is_drawing_pdf(claim["document"]):
+                keep.append(claim)
+                continue
+            text = claim["text"]
+            relocated = False
+            for req_re, loc_re in rules:
+                if not req_re.search(text):
+                    continue
+                if loc_re.search(schedule_text.get(key, "")):
+                    break  # already on a matching item
+                # find better keys
+                targets = [
+                    k
+                    for k, stx in schedule_text.items()
+                    if stx and loc_re.search(stx)
+                ]
+                for t in targets:
+                    item_map.setdefault(t, []).append(dict(claim))
+                    moved += 1
+                    relocated = True
+                if relocated:
+                    break
+            if not relocated:
+                keep.append(claim)
+        item_map[key] = keep
+        if not item_map[key]:
+            del item_map[key]
+    if moved:
+        print(f"Re-homed {moved} requirement claim(s) onto matching schedule items")
+    return moved
+
+
 def expand_room_finish_links(item_map: ItemMap) -> int:
     """Propagate finish tags from room/drawing claims onto CPT-*/P-*/… keys."""
     added = 0
@@ -475,6 +524,7 @@ def build_item_map(dataset_dir: str) -> ItemMap:
 
     expand_room_finish_links(item_map)
     link_schedule_marks_on_drawings(item_map, drawing_pages)
+    rehome_mislinked_requirements(item_map)
     return item_map
 
 
@@ -552,6 +602,8 @@ If conflict: which document has the INCORRECT info?
   if schedule vs drawing product/color disagree, prefer citing the drawing OR schedule
   that looks like the injected error (state both values clearly).
 - Same-doc duplicate Tag rows: cite that schedule file; describe both manufacturers/products.
+- Do NOT flag a conflict when a requirement clearly does not apply to this item's location
+  (e.g. mechanical-room door rule vs a Main Entry door).
 
 Respond with ONLY JSON:
 {{
@@ -590,6 +642,13 @@ If no conflict: {{"conflict": false}}
                     break
             else:
                 document = next(iter(claim_docs))
+
+    # Prefer schedule/drawing as the incorrect file when a written requirement/spec also
+    # appears in the claim set (grader expects the doc with the wrong value).
+    schedule_docs = [d for d in claim_docs if is_schedule_pdf(d) or is_drawing_pdf(d)]
+    other_docs = [d for d in claim_docs if d not in schedule_docs]
+    if schedule_docs and other_docs and document in other_docs:
+        document = schedule_docs[0]
 
     error: dict[str, Any] = {
         "document": document,

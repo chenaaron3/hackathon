@@ -1,0 +1,69 @@
+{
+  "D-201": [
+    {
+      "document": "schedule.pdf",
+      "page": 1,
+      "text": "Mark: D-201; Location: Main Entry; Type: ALU; Fire Rating: -; Hardware Set: HW-1"
+    }
+  ],
+  "D-202": [
+    {
+      "document": "schedule.pdf",
+      "page": 1,
+      "text": "Mark: D-202; Location: Mechanical 101; Type: HM; Fire Rating: 45 min; Hardware Set: HW-5"
+    },
+    {
+      "document": "spec.pdf",
+      "page": 1,
+      "text": "Doors at mechanical rooms shall carry a 90-minute fire rating."
+    }
+  ],
+  "D-203": [
+    {
+      "document": "schedule.pdf",
+      "page": 1,
+      "text": "Mark: D-203; Location: Storage 102; Type: WD; Fire Rating: 20 min; Hardware Set: HW-3"
+    },
+    {
+      "document": "spec.pdf",
+      "page": 1,
+      "text": "Doors at storage rooms shall carry a 20-minute fire rating."
+    }
+  ],
+  "WC-1": [
+    {
+      "document": "schedule.pdf",
+      "page": 1,
+      "text": "Mark: WC-1; Fixture: Water Closet; Flow: 1.28 gpf; Notes: Floor mounted"
+    },
+    {
+      "document": "spec.pdf",
+      "page": 1,
+      "text": "Water closets: 1.28 gallons per flush maximum."
+    }
+  ],
+  "L-1": [
+    {
+      "document": "schedule.pdf",
+      "page": 1,
+      "text": "Mark: L-1; Fixture: Lavatory; Flow: 5.0 gpm; Notes: Wall hung"
+    },
+    {
+      "document": "spec.pdf",
+      "page": 1,
+      "text": "Lavatory faucets: 0.5 gpm aerators maximum per energy code."
+    }
+  ],
+  "SS-1": [
+    {
+      "document": "schedule.pdf",
+      "page": 1,
+      "text": "Mark: SS-1; Fixture: Service Sink; Flow: -; Notes: Mop basin"
+    },
+    {
+      "document": "spec.pdf",
+      "page": 1,
+      "text": "Service sinks: floor mounted mop basin with hose bibb."
+    }
+  ]
+}

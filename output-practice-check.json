@@ -1,0 +1,16 @@
+{
+  "errors": [
+    {
+      "document": "spec.pdf",
+      "category": "cross-document-conflict",
+      "description": "Item key D-202 has a fire rating of 45 min according to schedule.pdf, but spec.pdf states it shall carry a 90-minute fire rating.",
+      "location": "page 1; Item key: D-202; Fire Rating: 45 min vs 90 min"
+    },
+    {
+      "document": "spec.pdf",
+      "category": "unit-error",
+      "description": "Item key L-1 has a flow of 5.0 gpm in schedule.pdf, which conflicts with the maximum flow of 0.5 gpm stated in spec.pdf.",
+      "location": "page 1; Item key: L-1; Flow: 5.0 gpm vs 0.5 gpm"
+    }
+  ]
+}

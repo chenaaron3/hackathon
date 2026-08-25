@@ -9,8 +9,8 @@
     {
       "document": "schedule.pdf",
       "category": "unit-error",
-      "description": "Item key L-1 has a flow rate of 5.0 gpm in schedule.pdf, which conflicts with the maximum of 0.5 gpm aerators specified in spec.pdf.",
-      "location": "page 1; item key L-1; Flow rate is 5.0 gpm vs 0.5 gpm aerators maximum"
+      "description": "Item key L-1 has a flow rate of 5.0 gpm in schedule.pdf, which conflicts with the maximum of 0.5 gpm aerators per energy code stated in spec.pdf.",
+      "location": "page 1; item key L-1; 5.0 gpm vs 0.5 gpm"
     }
   ]
 }

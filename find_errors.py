@@ -1,11 +1,6 @@
 """AEC Hackathon agent: page-wise item labeling, then conflict resolution.
 
-Pipeline:
-  1. Extract each PDF page with pypdf.
-  2. Label page → unique item keys + claim text; reuse existing keys.
-  3. Global map: key → [{document, page, text}, ...]
-  4. For keys with claims from ≥2 documents, ask the LLM if they conflict
-     and emit output.json errors.
+PDF-only (no data pack). Schedules → one item per Tag row. Drawings → full page text.
 """
 
 from __future__ import annotations
@@ -13,7 +8,6 @@ from __future__ import annotations
 import json
 import os
 import re
-import urllib.error
 import urllib.request
 from typing import Any
 
@@ -29,7 +23,6 @@ CATEGORIES = (
     "missing-item",
 )
 
-# key → list of claims
 ItemMap = dict[str, list[dict[str, Any]]]
 
 
@@ -42,12 +35,23 @@ def list_pdfs(dataset_dir: str) -> list[str]:
     return names
 
 
+def is_schedule_pdf(name: str) -> bool:
+    return "schedule" in name.lower()
+
+
+def is_drawing_pdf(name: str) -> bool:
+    lower = name.lower()
+    return "draw" in lower or "plan" in lower
+
+
 def iter_pdf_pages(path: str) -> list[str]:
     from pypdf import PdfReader
 
     pages = []
-    for page in PdfReader(path).pages:
-        pages.append((page.extract_text() or "").strip())
+    for i, page in enumerate(PdfReader(path).pages, start=1):
+        text = (page.extract_text() or "").strip()
+        pages.append(text)
+        print(f"  extracted page {i}: {len(text)} chars")
     return pages
 
 
@@ -97,40 +101,140 @@ def normalize_key(key: str) -> str:
     return re.sub(r"\s+", " ", (key or "").strip())
 
 
-def summarize_map(item_map: ItemMap, *, max_keys: int = 80) -> dict[str, str]:
-    """Compact key → known context so later pages can reuse keys."""
+def summarize_map(item_map: ItemMap, *, max_keys: int = 120) -> dict[str, str]:
     summary: dict[str, str] = {}
     for key in sorted(item_map.keys())[:max_keys]:
-        texts = [c["text"] for c in item_map[key][:4]]
-        summary[key] = " | ".join(texts)
+        texts = [c["text"] for c in item_map[key][:3]]
+        summary[key] = " | ".join(texts)[:400]
     return summary
 
 
-def label_page(
+def _parse_items(raw: str) -> list[dict[str, str]]:
+    data = parse_json_object(raw)
+    items = data.get("items", [])
+    if not isinstance(items, list):
+        return []
+    out: list[dict[str, str]] = []
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        key = normalize_key(str(item.get("key", "")))
+        text = str(item.get("text", "")).strip()
+        if key and text:
+            out.append({"key": key, "text": text})
+    return out
+
+
+def label_schedule_page(*, document: str, page: int, page_text: str) -> list[dict[str, str]]:
+    """One item per schedule/table row (Tag column)."""
+    if not page_text.strip():
+        return []
+    prompt = f"""This page is a product / fixture SCHEDULE (spreadsheet-like table).
+
+Document: {document}
+Page: {page}
+
+Page text:
+---
+{page_text[:16000]}
+---
+
+Emit EXACTLY ONE item per table row that has a Tag (e.g. CPT-1, L-1, WC-1, CG-1).
+Do not merge rows. Do not skip rows that have a Tag.
+If the same Tag appears on two rows, emit TWO items with that same key (different text).
+The "text" must include the important columns for that row (Manufacturer, Product,
+Masterformat, Category, Remarks/notes, colors, flow rates, etc.).
+
+Respond with ONLY JSON:
+{{"items": [{{"key": "<Tag>", "text": "<row fields as one sentence or semicolon-separated>"}}]}}
+"""
+    return _parse_items(call_llm(prompt))
+
+
+def label_drawing_page(
+    *,
+    document: str,
+    page: int,
+    page_text: str,
+    existing_summary: dict[str, str],
+    allow_chunk_retry: bool = True,
+) -> list[dict[str, str]]:
+    if len(page_text.strip()) < 40:
+        print(f"  warning: nearly empty text for {document} p{page} ({len(page_text)} chars)")
+        return []
+
+    keys_blob = json.dumps(existing_summary, ensure_ascii=False, indent=2)
+    chunk = page_text[:18000]
+    prompt = f"""You extract items from a construction DRAWING sheet (floor plan, diagram, notes).
+
+The page text below is real extracted PDF content — use it. Do NOT return an empty list if
+tags, rooms, equipment marks, finish codes, panels, or measurable notes appear.
+
+A KEY is a stable id: finish tag (CPT-1, P-1), fixture (L-1, WC-2), equipment (DWH-1,
+MSB-NORTH), room number (N106), panel, etc.
+
+Reuse existing schedule keys when the drawing references the same tag.
+
+Existing schedule/items:
+{keys_blob}
+
+Document: {document}
+Page: {page}
+Page text length: {len(page_text)} characters
+
+Page text:
+---
+{chunk}
+---
+
+Respond with ONLY JSON:
+{{"items": [{{"key": "<id>", "text": "<fact from this sheet>"}}]}}
+
+Rules:
+- Emit a claim for each distinct tag/mark/room with useful info on this page.
+- For rooms: include finish codes shown (floor/base/wall).
+- For notes with slopes, ratings, sizes, voltages — attach to the relevant key.
+- Prefer many specific items over omitting content.
+"""
+    items = _parse_items(call_llm(prompt))
+    if not items and allow_chunk_retry and len(page_text) > 500:
+        print(f"  retry labeling {document} p{page} in chunks…")
+        for start in range(0, min(len(page_text), 24000), 8000):
+            part = page_text[start : start + 8000]
+            items.extend(
+                label_drawing_page(
+                    document=document,
+                    page=page,
+                    page_text=part,
+                    existing_summary=existing_summary,
+                    allow_chunk_retry=False,
+                )
+            )
+        seen: set[tuple[str, str]] = set()
+        uniq = []
+        for it in items:
+            sig = (it["key"], it["text"])
+            if sig not in seen:
+                seen.add(sig)
+                uniq.append(it)
+        items = uniq
+    return items
+
+
+def label_generic_page(
     *,
     document: str,
     page: int,
     page_text: str,
     existing_summary: dict[str, str],
 ) -> list[dict[str, str]]:
-    """Return [{key, text}, ...] for claims on this page."""
     if not page_text.strip():
         return []
-
     keys_blob = json.dumps(existing_summary, ensure_ascii=False, indent=2)
-    prompt = f"""You extract facts about unique construction items from one PDF page.
+    prompt = f"""Extract facts about unique construction items from this page.
+Reuse existing keys when a requirement applies to them.
 
-A KEY is a stable unique item id (equipment mark, door mark, fixture tag, room number,
-finish code, panel name, etc.). Prefer short marks like "D-202", "L-1", "CPT-1", "MSB-NORTH".
-
-CRITICAL — reuse existing keys whenever a requirement or note applies to them:
-- "doors at mechanical rooms shall be 90-minute" applies to existing doors whose
-  location/context is a mechanical room (e.g. D-202 at Mechanical 101).
-- "lavatory faucets 0.5 gpm max" applies to existing lavatory marks (e.g. L-1).
-- "storage room doors 20-minute" applies to doors at storage rooms.
-Do NOT invent a new key for a general requirement if an existing item matches.
-
-Existing items (key → what we already know):
+Existing items:
 {keys_blob}
 
 Document: {document}
@@ -142,30 +246,24 @@ Page text:
 ---
 
 Respond with ONLY JSON:
-{{"items": [{{"key": "<item id>", "text": "<one sentence claim: property + value from this page>"}}]}}
-
-Rules:
-- Prefer measurable facts: fire ratings, flow rates, sizes, quantities, required ratings.
-- Skip pure synonyms / non-conflicting restatements.
-- One item may yield multiple claims (separate entries, same key).
-- If nothing useful, return {{"items": []}}.
+{{"items": [{{"key": "<item id>", "text": "<claim>"}}]}}
 """
-    raw = call_llm(prompt)
-    data = parse_json_object(raw)
-    items = data.get("items", [])
-    if not isinstance(items, list):
-        return []
+    return _parse_items(call_llm(prompt))
 
-    out: list[dict[str, str]] = []
-    for item in items:
-        if not isinstance(item, dict):
-            continue
-        key = normalize_key(str(item.get("key", "")))
-        text = str(item.get("text", "")).strip()
+
+def add_claims(item_map: ItemMap, document: str, claims: list[dict[str, Any]]) -> int:
+    n = 0
+    for claim in claims:
+        key = normalize_key(str(claim["key"]))
+        text = str(claim["text"]).strip()
+        page = int(claim.get("page") or 1)
         if not key or not text:
             continue
-        out.append({"key": key, "text": text})
-    return out
+        item_map.setdefault(key, []).append(
+            {"document": document, "page": page, "text": text}
+        )
+        n += 1
+    return n
 
 
 def build_item_map(dataset_dir: str) -> ItemMap:
@@ -175,61 +273,83 @@ def build_item_map(dataset_dir: str) -> ItemMap:
         print(f"No PDFs found in {dataset_dir}")
         return item_map
 
-    # Schedules / product lists first so marks exist before specs/requirements.
     def sort_key(name: str) -> tuple[int, str]:
-        lower = name.lower()
-        if "schedule" in lower:
+        if is_schedule_pdf(name):
             return (0, name)
-        if "spec" in lower:
+        if "spec" in name.lower():
             return (2, name)
         return (1, name)
 
     for name in sorted(pdfs, key=sort_key):
         path = os.path.join(dataset_dir, name)
         try:
+            print(f"Reading PDF: {name}")
             pages = iter_pdf_pages(path)
         except Exception as exc:  # noqa: BLE001
             print(f"could not read {name}: {exc}")
             continue
-        print(f"Labeling {name} ({len(pages)} page(s))…")
+
+        if is_schedule_pdf(name):
+            print(f"Parsing schedule rows (1 item per Tag): {name}")
+            for idx, page_text in enumerate(pages, start=1):
+                try:
+                    labeled = label_schedule_page(
+                        document=name, page=idx, page_text=page_text
+                    )
+                except Exception as exc:  # noqa: BLE001
+                    print(f"  label failed: {exc}")
+                    continue
+                print(f"  page {idx}: {len(labeled)} row-item(s)")
+                add_claims(
+                    item_map,
+                    name,
+                    [{"key": c["key"], "text": c["text"], "page": idx} for c in labeled],
+                )
+            continue
+
+        kind = "drawing" if is_drawing_pdf(name) else "doc"
+        print(f"Labeling {name} as {kind} ({len(pages)} page(s) via pypdf)…")
         for idx, page_text in enumerate(pages, start=1):
             try:
-                labeled = label_page(
-                    document=name,
-                    page=idx,
-                    page_text=page_text,
-                    existing_summary=summarize_map(item_map),
-                )
+                if is_drawing_pdf(name):
+                    labeled = label_drawing_page(
+                        document=name,
+                        page=idx,
+                        page_text=page_text,
+                        existing_summary=summarize_map(item_map),
+                    )
+                else:
+                    labeled = label_generic_page(
+                        document=name,
+                        page=idx,
+                        page_text=page_text,
+                        existing_summary=summarize_map(item_map),
+                    )
             except Exception as exc:  # noqa: BLE001
                 print(f"  label failed {name} p{idx}: {exc}")
                 continue
             print(f"  page {idx}: {len(labeled)} claim(s)")
-            for claim in labeled:
-                key = claim["key"]
-                entry = {
-                    "document": name,
-                    "page": idx,
-                    "text": claim["text"],
-                }
-                item_map.setdefault(key, []).append(entry)
+            add_claims(
+                item_map,
+                name,
+                [{"key": c["key"], "text": c["text"], "page": idx} for c in labeled],
+            )
     return item_map
 
 
 def multi_document_keys(item_map: ItemMap) -> list[str]:
-    keys = []
-    for key, claims in item_map.items():
-        docs = {c["document"] for c in claims}
-        if len(docs) >= 2:
-            keys.append(key)
-    return sorted(keys)
+    return sorted(
+        key
+        for key, claims in item_map.items()
+        if len({c["document"] for c in claims}) >= 2
+    )
 
 
 def classify_category(description: str, suggested: str) -> str:
     if suggested in CATEGORIES and suggested != "cross-document-conflict":
         return suggested
     d = description.lower()
-    # Magnitude / decimal slips on the same unit → unit-error
-    if re.search(r"\b\d+(\.\d+)?\s*(gpm|gpf|gpm|cfm|kw|kva|amp|psi|in|ft|mm|m)\b", d):
+    if re.search(r"\b\d+(\.\d+)?\s*(gpm|gpf|cfm|kw|kva|amp|psi)\b", d):
         nums = [float(x) for x in re.findall(r"\d+(?:\.\d+)?", d)]
         if len(nums) >= 2 and any(
             abs(a - b) > 1e-9 and (max(a, b) / max(min(a, b), 1e-9) >= 5)
@@ -251,12 +371,11 @@ Claims:
 {claims_blob}
 
 A CONFLICT means contradictory measurable facts (e.g. 45 min vs 90 min fire rating,
-5.0 gpm vs 0.5 gpm). NOT a conflict: synonyms ("service sink" vs "mop basin"),
-restating the same number, or incomplete-but-compatible details.
+5.0 gpm vs 0.5 gpm, different manufacturers for the same exclusive tag, conflicting
+colors/models). NOT a conflict: synonyms, restating the same value, or compatible extras.
 
-If there is a conflict, identify which document contains the INCORRECT information.
-When a schedule/drawing value violates a written spec/requirement, the schedule/drawing
-is usually incorrect.
+If conflict: which document has the INCORRECT info? Schedule/drawing usually wrong when
+it violates a written requirement; if two schedules disagree, pick the clearly wrong one.
 
 Respond with ONLY JSON:
 {{
@@ -267,10 +386,7 @@ Respond with ONLY JSON:
   "description": "<one sentence: include the item key and quote wrong value and correct value>"
 }}
 
-Category rules:
-- "unit-error" when the same quantity has a wrong magnitude/decimal (5.0 gpm vs 0.5 gpm).
-- "cross-document-conflict" when requirements/ratings disagree across documents (45 min vs 90 min).
-
+Category: "unit-error" for magnitude/decimal slips; else usually "cross-document-conflict".
 If no conflict: {{"conflict": false}}
 """
     raw = call_llm(prompt)
@@ -284,8 +400,6 @@ If no conflict: {{"conflict": false}}
     category = classify_category(description, str(data.get("category", "")).strip())
     if not document or not description:
         return None
-
-    # Ensure key + distinctive tokens appear for grader keyword matching.
     if key not in description:
         description = f"{key}: {description}"
 
@@ -343,10 +457,9 @@ def main() -> None:
         print(f"Map has {len(item_map)} item key(s)")
         errors = find_conflicts(item_map)
         print(f"Reported {len(errors)} error(s)")
-    except Exception as exc:  # noqa: BLE001 - always write output
+    except Exception as exc:  # noqa: BLE001
         print(f"Pipeline failed: {exc}")
 
-    # Debug aid for local runs (ignored by grader; not required).
     debug_path = os.environ.get("ITEM_MAP_PATH")
     if debug_path:
         with open(debug_path, "w", encoding="utf-8") as f:
